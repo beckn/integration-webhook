@@ -1,0 +1,114 @@
+{
+  "context": {
+    "transaction_id": "7afe44fd-d947-4a0a-81bc-d286784df2c1",
+    "message_id": "a61b4dc6-8004-4c6c-bbae-c93a897cd165",
+    "bap_id": "beckn-sandbox-bap.becknprotocol.io",
+    "bap_uri": "https://f1a43dae8bd28c2695fcf9fdbcf572e2.loophole.site",
+    "bpp_id": "beckn-sandbox-bpp.becknprotocol.io",
+    "bpp_uri": "https://e3dd-2409-4063-429d-613a-e975-c421-884f-ff31.ngrok-free.app",
+    "country": "IND",
+    "city": "std:080",
+    "core_version": "0.9.3",
+    "ttl": "PT10M",
+    "domain": "nic2004:60221",
+    "action": "on_search",
+    "timestamp": "2023-05-06T08:59:33.781Z"
+  },
+  "message": {
+    "catalog": {
+      "bpp/providers": [
+        {
+          "extended_attributes": {},
+          "locations": [
+            {
+              "id": ".faiz/mobility/ind.blr/17@mobility-bpp-infra1.becknprotocol.io.provider_location",
+              "gps": "12.971600,77.594600"
+            }
+          ],
+          "descriptor": {
+            "images": [
+              "https://mobility-bpp-infra1.becknprotocol.io/companies/view/7"
+            ],
+            "name": "Best Taxies"
+          },
+          "id": "./mobility/ind.blr/7@mobility-bpp-infra1.becknprotocol.io.provider",
+          "categories": [
+            {
+              "descriptor": {
+                "name": "Premium Taxi"
+              },
+              "id": "./mobility/ind.blr/1@mobility-bpp-infra1.becknprotocol.io.category"
+            }
+          ],
+          "rateable": false,
+          "items": [
+            {
+              "extended_attributes": {
+                "returnable": false,
+                "cancellable": false,
+                "available_on_cod": false,
+                "seller_pickup_return": false
+              },
+              "category_id": "./mobility/ind.blr/1@mobility-bpp-infra1.becknprotocol.io.category",
+              "related": false,
+              "price": {
+                "listed_value": "0.0",
+                "offered_value": "0.0",
+                "computed_value": "0.0",
+                "minimum_value": "0.0",
+                "currency": "INR",
+                "maximum_value": "0.0",
+                "value": "18.439856227475932",
+                "estimated_value": "0.0"
+              },
+              "matched": false,
+              "descriptor": {
+                "images": [
+                  "https://mobility-bpp-infra1.becknprotocol.io/resources/images/car.png"
+                ],
+                "code": "Premium Taxi",
+                "name": "Premium Taxi"
+              },
+              "id": "./mobility/ind.blr/17@mobility-bpp-infra1.becknprotocol.io.item",
+              "rateable": false,
+              "tags": {
+                "NameOfModel": "Brezza",
+                "VehicleType": "Premium Taxi",
+                "Make": "Maruti",
+                "FuelType": "Diesel"
+              },
+              "fulfillment_id": "./mobility/ind.blr/29@mobility-bpp-infra1.becknprotocol.io.fulfillment",
+              "recommended": false
+            }
+          ],
+          "ttl": "PT10S"
+        }
+      ],
+      "bpp/fulfillments": [
+        {
+          "extended_attributes": {},
+          "start": {
+            "location": {
+              "gps": "12.923609,77.614630"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.934630,77.615340"
+            }
+          },
+          "state": {
+            "descriptor": {}
+          },
+          "id": "./mobility/ind.blr/29@mobility-bpp-infra1.becknprotocol.io.fulfillment",
+          "rateable": false,
+          "tracking": false
+        }
+      ],
+      "bpp/descriptor": {
+        "code": "mobility-bpp-infra1.becknprotocol.io",
+        "name": "mobility-bpp-infra1.becknprotocol.io"
+      }
+    }
+  }
+}
