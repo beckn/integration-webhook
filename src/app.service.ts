@@ -20,6 +20,7 @@ export class AppService {
       responseData.context.bap_id = body.context.bap_id;
       responseData.context.bap_uri = body.context.bap_uri;
       responseData.context.transaction_id = body.context.transaction_id;
+      responseData.context.domain = body.context.domain;
 
       let requestAction = null;
 
