@@ -22,6 +22,12 @@ export class AppService {
       responseData.context.transaction_id = body.context.transaction_id;
       responseData.context.domain = body.context.domain;
 
+      if (body?.context?.bpp_id)
+        responseData.context.bpp_id = body.context.bpp_id;
+
+      if (body?.context?.bpp_uri)
+        responseData.context.bpp_uri = body.context.bpp_uri;
+
       let requestAction = null;
 
       switch (body.context.action) {
