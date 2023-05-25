@@ -61,6 +61,12 @@ export class AppService {
         case 'support':
           requestAction = 'on_support';
           break;
+        case 'get_cancellation_reasons':
+          requestAction = "cancellation_reasons";
+          break;
+        case 'get_rating_categories':
+          requestAction = 'rating_categories';
+          break;
 
         default:
           console.log(
