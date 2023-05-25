@@ -20,7 +20,7 @@ $ npm run start:dev
 1. Change the sandbox api url in `src/app.service.ts` as per your url. You need to update the `http://127.0.0.1:3000/` part only.
 
 ```js
-const sandboxUrl = ``http://127.0.0.1:3000/${body.context.action}``;
+const sandboxUrl = `http://127.0.0.1:3000/${body.context.action}`;
 ```
 
 2. Change the protocaol server bpp client's url in `src/app.service.ts` as per your url. You need to update the `http://127.0.0.1:6001/` part only.
