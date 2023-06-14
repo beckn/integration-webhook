@@ -1,11 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import axios from 'axios';
-
 @Injectable()
 export class AppService {
   async getHello(body: any) {
     try {
-      const sandboxUrl = `http://127.0.0.1:3000/${body.context.action}`;
+      const sandboxUrl = `${process.env.BASEURL}/${body.context.action}`;
       const { data: responseData } = await axios.post(sandboxUrl, body);
 
       if (!responseData?.context) {
