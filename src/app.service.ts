@@ -6,7 +6,7 @@ dotenv.config()
 export class AppService {
   async getHello(body: any) {
     try {
-      const sandboxUrl = `${process.env.SandboxUrl}/${body.context.action}`;
+      const sandboxUrl = `${process.env.SANDBOXURL}/${body.context.action}`;
       const { data: responseData } = await axios.post(sandboxUrl, body);
 
       if (!responseData?.context) {
@@ -77,7 +77,7 @@ export class AppService {
           return;
       }
 
-      const bppClientUrl = `${process.env.BppClientUrl}/${requestAction}`;
+      const bppClientUrl = `${process.env.BPPCLIENTURL}/${requestAction}`;
 
       setTimeout(async () => {
         console.log(
