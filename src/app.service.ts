@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import axios from 'axios';
-
+import * as dotenv from "dotenv"
+dotenv.config()
 @Injectable()
 export class AppService {
   async getHello(body: any) {
     try {
-      const sandboxUrl = `http://127.0.0.1:3000/${body.context.action}`;
+      const sandboxUrl = `${process.env.SANDBOXURL}/${body.context.action}`;
       const { data: responseData } = await axios.post(sandboxUrl, body);
 
       if (!responseData?.context) {
@@ -76,7 +77,7 @@ export class AppService {
           return;
       }
 
-      const bppClientUrl = `http://127.0.0.1:6001/${requestAction}`;
+      const bppClientUrl = `${process.env.BPPCLIENTURL}/${requestAction}`;
 
       setTimeout(async () => {
         console.log(
