@@ -6,7 +6,12 @@ dotenv.config()
 export class AppService {
   async getHello(body: any) {
     try {
-      const sandboxUrl = `${process.env.SANDBOXURL}/${body.context.action}`;
+      let sandboxUrl = ''
+      if (body.context.domain.includes("credit")) {
+        sandboxUrl = `${process.env.SANDBOXURL}/financial-services/${body.context.action}`;
+      } else {
+        sandboxUrl = `${process.env.SANDBOXURL}/mobility/${body.context.action}`;
+      }
       const { data: responseData } = await axios.post(sandboxUrl, body);
 
       if (!responseData?.context) {
