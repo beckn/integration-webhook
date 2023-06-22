@@ -10,7 +10,7 @@
     "city": "std:080",
     "core_version": "0.9.3",
     "ttl": "PT10M",
-    "domain": "nic2004:60221",
+    "domain": "ONDC:TRV10",
     "action": "on_search",
     "timestamp": "2023-05-06T08:59:33.781Z"
   },
