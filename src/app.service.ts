@@ -1,12 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import axios from 'axios';
-import * as dotenv from "dotenv"
-dotenv.config()
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 @Injectable()
 export class AppService {
   async getHello(body: any) {
     try {
-      const sandboxUrl = `${process.env.SANDBOXURL}/${body.context.action}`;
+      let sandboxUrl = '';
+      if (body.context.domain.includes('credit')) {
+        sandboxUrl = `${process.env.SANDBOXURL}/financial-services/${body.context.action}`;
+      } else {
+        sandboxUrl = `${process.env.SANDBOXURL}/mobility/${body.context.action}`;
+      }
+      //const sandboxUrl = `${process.env.SANDBOXURL}/financial-services/${body.context.action}`;
       const { data: responseData } = await axios.post(sandboxUrl, body);
 
       if (!responseData?.context) {
@@ -63,7 +70,7 @@ export class AppService {
           requestAction = 'on_support';
           break;
         case 'get_cancellation_reasons':
-          requestAction = "cancellation_reasons";
+          requestAction = 'cancellation_reasons';
           break;
         case 'get_rating_categories':
           requestAction = 'rating_categories';
