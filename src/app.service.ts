@@ -10,10 +10,13 @@ export class AppService {
       let sandboxUrl = '';
       if (body.context.domain.includes('credit')) {
         sandboxUrl = `${process.env.SANDBOXURL}/financial-services/${body.context.action}`;
+      } else if (body.context.domain.includes('dsep')) {
+        sandboxUrl = `${process.env.SANDBOXURL}/dsep/${body.context.action}`;
       } else {
         sandboxUrl = `${process.env.SANDBOXURL}/mobility/${body.context.action}`;
       }
       //const sandboxUrl = `${process.env.SANDBOXURL}/financial-services/${body.context.action}`;
+
       const { data: responseData } = await axios.post(sandboxUrl, body);
 
       if (!responseData?.context) {
@@ -104,11 +107,11 @@ export class AppService {
         try {
           const r = await axios.post(bppClientUrl, responseData);
         } catch (error) {
-          console.log();
+          console.log('error=>', error);
         }
       }, 2000);
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
     }
   }
 }
