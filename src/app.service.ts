@@ -8,7 +8,7 @@ export class AppService {
   async getHello(body: any) {
     try {
       let sandboxUrl = '';
-      if (body.context.domain.includes('credit')) {
+      if (body.context.domain.includes('financial')) {
         sandboxUrl = `${process.env.SANDBOXURL}/financial-services/${body.context.action}`;
       } else if (body.context.domain.includes('dsep')) {
         sandboxUrl = `${process.env.SANDBOXURL}/dsep/${body.context.action}`;
