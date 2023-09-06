@@ -17,7 +17,7 @@ export class AppService {
       } else {
         sandboxUrl = `${process.env.SANDBOXURL}/mobility/${body.context.action}`;
       }
-
+      console.log('called', sandboxUrl);
       const { data: responseData } = await axios.post(sandboxUrl, body);
 
       if (!responseData?.context) {
@@ -112,7 +112,7 @@ export class AppService {
         }
       }, 2000);
     } catch (err) {
-      console.log(err.message);
+      console.log(err);
     }
   }
 }
