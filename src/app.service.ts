@@ -7,6 +7,9 @@ dotenv.config();
 export class AppService {
   async getHello(body: any) {
     try {
+      if (body.context.action.includes('on')) {
+        return;
+      }
       let sandboxUrl = '';
       if (body.context.domain.includes('financial')) {
         sandboxUrl = `${process.env.SANDBOXURL}/financial-services/${body.context.action}`;
