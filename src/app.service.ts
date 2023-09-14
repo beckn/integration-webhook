@@ -13,7 +13,10 @@ export class AppService {
       let sandboxUrl = '';
       if (body.context.domain.includes('financial')) {
         sandboxUrl = `${process.env.SANDBOXURL}/financial-services/${body.context.action}`;
-      } else if (body.context.domain.includes('dsep')) {
+      } else if (
+        body.context.domain.includes('dsep') ||
+        body.context.domain.includes('onest')
+      ) {
         sandboxUrl = `${process.env.SANDBOXURL}/dsep/${body.context.action}`;
       } else if (body.context.domain.includes('dent')) {
         sandboxUrl = `${process.env.SANDBOXURL}/dent/${body.context.action}`;
