@@ -20,6 +20,8 @@ export class AppService {
         sandboxUrl = `${process.env.SANDBOXURL}/dsep/${body.context.action}`;
       } else if (body.context.domain.includes('dent')) {
         sandboxUrl = `${process.env.SANDBOXURL}/dent/${body.context.action}`;
+      } else if (body.context.domain.includes('dhp')) {
+        sandboxUrl = `${process.env.SANDBOXURL}/dhp/${body.context.action}`;
       } else {
         sandboxUrl = `${process.env.SANDBOXURL}/mobility/${body.context.action}`;
       }
