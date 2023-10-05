@@ -11,7 +11,10 @@ export class AppService {
         return;
       }
       let sandboxUrl = '';
-      if (body.context.domain.includes('financial')) {
+      if (
+        body.context.domain.includes('financial') &&
+        !body.context.domain.includes('onest')
+      ) {
         sandboxUrl = `${process.env.SANDBOXURL}/financial-services/${body.context.action}`;
       } else if (
         body.context.domain.includes('dsep') ||
