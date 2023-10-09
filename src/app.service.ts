@@ -5,7 +5,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 @Injectable()
 export class AppService {
-  async getHello(body: any) {
+  async getSandBoxDataService(body: any) {
     try {
       if (body.context.action.includes('on_')) {
         return;

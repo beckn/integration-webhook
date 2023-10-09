@@ -6,8 +6,8 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Post()
-  getHello(@Body() body: any) {
-    this.appService.getHello(body);
+  getSandBoxDataController(@Body() body: any) {
+    this.appService.getSandBoxDataService(body);
     return { message: { ack: { status: 'ACK' } } };
   }
 }
