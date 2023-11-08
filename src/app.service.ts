@@ -27,6 +27,10 @@ export class AppService {
         sandboxUrl = `${process.env.SANDBOXURL}/dhp/${body.context.action}`;
       } else if (body.context.domain.includes('supply-chain-services')) {
         sandboxUrl = `${process.env.SANDBOXURL}/industry-4.0/${body.context.action}`;
+      } else if (
+        body.context.domain.includes('online-dispute-resolution:0.1.0')
+      ) {
+        sandboxUrl = `${process.env.SANDBOXURL}/odr/${body.context.action}`;
       } else {
         sandboxUrl = `${process.env.SANDBOXURL}/mobility/${body.context.action}`;
       }
