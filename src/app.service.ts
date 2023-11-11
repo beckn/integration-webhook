@@ -31,6 +31,8 @@ export class AppService {
         body.context.domain.includes('online-dispute-resolution:0.1.0')
       ) {
         sandboxUrl = `${process.env.SANDBOXURL}/odr/${body.context.action}`;
+      } else if (body.context.domain.includes('local-retail')) {
+        sandboxUrl = `${process.env.SANDBOXURL}/local-retail/${body.context.action}`;
       } else {
         sandboxUrl = `${process.env.SANDBOXURL}/mobility/${body.context.action}`;
       }
