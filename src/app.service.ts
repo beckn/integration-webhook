@@ -32,7 +32,13 @@ export class AppService {
       ) {
         sandboxUrl = `${process.env.SANDBOXURL}/odr/${body.context.action}`;
       } else if (body.context.domain.includes('local-retail')) {
-        sandboxUrl = `${process.env.SANDBOXURL}/local-retail/${body.context.action}`;
+        const default_version = "1.1.0"
+        let version = default_version
+        const current_version = body?.context?.core_version
+        if (current_version) {
+          version = current_version
+        }
+        sandboxUrl = `${process.env.SANDBOXURL}/local-retail/${version}/${body.context.action}`;
       } else {
         sandboxUrl = `${process.env.SANDBOXURL}/mobility/${body.context.action}`;
       }
