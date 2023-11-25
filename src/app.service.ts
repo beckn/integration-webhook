@@ -124,7 +124,7 @@ export class AppService {
           `Making post request to: ${bppClientUrl}`,
           `\n`,
           `\n`,
-          `Body: ${JSON.stringify(body)}`,
+          `Body: ${JSON.stringify(responseData)}`,
           `\n`,
           '-----------------------------------------------------------',
         );
