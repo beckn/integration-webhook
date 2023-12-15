@@ -27,16 +27,14 @@ export class AppService {
         sandboxUrl = `${process.env.SANDBOXURL}/dhp/${body.context.action}`;
       } else if (body.context.domain.includes('supply-chain-services')) {
         sandboxUrl = `${process.env.SANDBOXURL}/industry-4.0/${body.context.action}`;
-      } else if (
-        body.context.domain.includes('online-dispute-resolution:0.1.0')
-      ) {
+      } else if (body.context.domain === 'online-dispute-resolution:0.1.0') {
         sandboxUrl = `${process.env.SANDBOXURL}/odr/${body.context.action}`;
       } else if (body.context.domain.includes('retail')) {
         const default_version = "1.1.0"
         let version = default_version
         const current_version = body?.context?.core_version
         if (current_version) {
-          version = current_version
+          version = current_version;
         }
         sandboxUrl = `${process.env.SANDBOXURL}/retail/${version}/${body.context.action}`;
       } else {
@@ -126,7 +124,7 @@ export class AppService {
           `Making post request to: ${bppClientUrl}`,
           `\n`,
           `\n`,
-          `Body: ${JSON.stringify(body)}`,
+          `Body: ${JSON.stringify(responseData)}`,
           `\n`,
           '-----------------------------------------------------------',
         );
