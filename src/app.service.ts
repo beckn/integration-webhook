@@ -30,15 +30,16 @@ export class AppService {
       } else if (body.context.domain === 'online-dispute-resolution:0.1.0') {
         sandboxUrl = `${process.env.SANDBOXURL}/odr/${body.context.action}`;
       } else if (body.context.domain.includes('retail')) {
-        const default_version = "1.1.0"
-        let version = default_version
-        const current_version = body?.context?.core_version
+        const default_version = '1.1.0';
+        let version = default_version;
+        const current_version = body?.context?.core_version;
         if (current_version) {
           version = current_version;
         }
         sandboxUrl = `${process.env.SANDBOXURL}/retail/${version}/${body.context.action}`;
       } else {
-        sandboxUrl = `${process.env.SANDBOXURL}/mobility/${body.context.action}`;
+        // sandboxUrl = `${process.env.SANDBOXURL}/mobility/${body.context.action}`;
+        // sandboxUrl = `${process.env.SANDBOXURL}/retail/0.9/${body.context.action}`;
       }
       console.log('called', sandboxUrl);
       const { data: responseData } = await axios.post(sandboxUrl, body);
@@ -129,12 +130,20 @@ export class AppService {
           '-----------------------------------------------------------',
         );
         try {
+          const sleep = () => {
+            return new Promise((res) => {
+              setTimeout(() => {
+                res('');
+              }, 20000);
+            });
+          };
+          // await sleep();
           const r = await axios.post(bppClientUrl, responseData);
-        } catch (error) {
-          console.log('error=>', error);
+        } catch (error: any) {
+          console.log('error=>', error.response.data.error.data.errors);
         }
       }, 2000);
-    } catch (err) {
+    } catch (err: any) {
       console.log(err);
     }
   }
