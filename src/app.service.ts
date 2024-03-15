@@ -38,7 +38,7 @@ export class AppService {
         }
         sandboxUrl = `${process.env.SANDBOXURL}/retail/${version}/${body.context.action}`;
       } else {
-        // sandboxUrl = `${process.env.SANDBOXURL}/mobility/${body.context.action}`;
+        sandboxUrl = `${process.env.SANDBOXURL}/mobility/${body.context.action}`;
         // sandboxUrl = `${process.env.SANDBOXURL}/retail/0.9/${body.context.action}`;
       }
       console.log('called', sandboxUrl);
