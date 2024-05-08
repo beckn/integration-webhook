@@ -1,3 +1,5 @@
+# THIS PROJECT IS NO MORE REQUIRED. SET THE Client.Webhook.url in the BPP Client directly to the Sandbox Address.
+
 # beckn-sandbox-webhook
 
 webhook implementation for the beckn sandbox
