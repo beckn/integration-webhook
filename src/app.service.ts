@@ -25,6 +25,8 @@ export class AppService {
         sandboxUrl = `${process.env.SANDBOXURL}/dent/${body.context.action}`;
       } else if (body.context.domain.includes('dhp')) {
         sandboxUrl = `${process.env.SANDBOXURL}/dhp/${body.context.action}`;
+      } else if (body.context.domain.includes('mobility')) {
+        sandboxUrl = `${process.env.SANDBOXURL}/mobility/${body.context.action}`;
       } else if (body.context.domain.includes('supply-chain-services')) {
         sandboxUrl = `${process.env.SANDBOXURL}/industry-4.0/${body.context.action}`;
       } else if (body.context.domain === 'online-dispute-resolution:0.1.0') {
