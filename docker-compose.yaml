@@ -8,6 +8,9 @@ services:
     container_name: webhook-bpp
     ports:
       - "3005:3005"
+    environment:
+      - SANDBOXURL=https://your-sandbox-api-url
+      - BPPCLIENTURL=https://your-bpp-client-url
     volumes:
       - ./logs:/usr/src/app/logs   # persist logs outside container
     restart: unless-stopped
