@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  webhook:
+    build:
+      context: .   # directory containing your Dockerfile
+      dockerfile: Dockerfile
+    container_name: webhook-bpp
+    ports:
+      - "3005:3005"
+    volumes:
+      - ./logs:/usr/src/app/logs   # persist logs outside container
+    restart: unless-stopped
